@@ -7,17 +7,16 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
     <script>
       window.addEventListener("load", function() {
-        fetch("https://handlers.education.launchcode.org/static/astronauts.json").then(response){
+        fetch("https://handlers.education.launchcode.org/static/astronauts.json").then(function(response){
           response.json().then(function(json) {
             let astronauts = [];
-            for (i=0; i<=json.length; i++) {
-              astronauts+=i;
+            for (i=0; i<json.length; i++) {
+              astronauts.push(json[i]);
             };
-            return astronauts;
-            console.log(json);
             console.log(astronauts);
+            return astronauts;
           });
-        };
+        });
       })
     </script>
   </head>
